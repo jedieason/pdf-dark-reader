@@ -1,0 +1,19 @@
+{
+  "name": "pdf-dark-reader",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A photo-safe dark PDF reader for Chrome, built on PDF.js.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jedieason/pdf-dark-reader.git"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}

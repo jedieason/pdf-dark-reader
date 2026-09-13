@@ -1,0 +1,335 @@
+{
+  "type": "object",
+  "properties": {
+    "altTextLearnMoreUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "annotationEditorMode": {
+      "type": "integer",
+      "default": 0,
+      "enum": [
+        -1,
+        0,
+        3,
+        15
+      ]
+    },
+    "annotationMode": {
+      "type": "integer",
+      "default": 2,
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "capCanvasAreaFactor": {
+      "type": "integer",
+      "default": 200
+    },
+    "commentLearnMoreUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "cursorToolOnLoad": {
+      "type": "integer",
+      "default": 0,
+      "title": "Cursor tool on load",
+      "description": "The cursor tool that is enabled upon load.\n 0 = Text selection tool.\n 1 = Hand tool.",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "defaultZoomDelay": {
+      "type": "integer",
+      "default": 400,
+      "title": "Default zoom delay",
+      "description": "Delay (in ms) to wait before redrawing the canvas."
+    },
+    "defaultZoomValue": {
+      "type": "string",
+      "default": "",
+      "title": "Default zoom level",
+      "description": "Default zoom level of the viewer. Accepted values: 'auto', 'page-actual', 'page-width', 'page-height', 'page-fit', or a zoom level in percents.",
+      "pattern": "|auto|page-actual|page-width|page-height|page-fit|[0-9]+\\.?[0-9]*(,[0-9]+\\.?[0-9]*){0,2}"
+    },
+    "disablePageLabels": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableTelemetry": {
+      "type": "boolean",
+      "default": false,
+      "title": "Disable telemetry",
+      "description": "Whether to prevent the extension from reporting the extension and browser version to the extension developers."
+    },
+    "enableAltText": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableAltTextModelDownload": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableAutoLinking": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable creation of hyperlinks from text that look like URLs."
+    },
+    "enableComment": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable creation of comment annotations."
+    },
+    "enableGuessAltText": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableHighlightFloatingButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableMerge": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableNewAltTextWhenAddingImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableNewBadge": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableNova": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableOptimizedPartialRendering": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable tracking of PDF operations to optimize partial rendering."
+    },
+    "enablePermissions": {
+      "type": "boolean",
+      "default": false
+    },
+    "enablePrintAutoRotate": {
+      "type": "boolean",
+      "default": true,
+      "title": "Automatically rotate printed pages",
+      "description": "When enabled, landscape pages are rotated when printed."
+    },
+    "enableScripting": {
+      "type": "boolean",
+      "default": false,
+      "title": "Enable active content (JavaScript) in PDFs",
+      "description": "Whether to allow execution of active content (JavaScript) by PDF files."
+    },
+    "enableSelectionRendering": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableSignatureEditor": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableSignatureVerification": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableSplitMerge": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableUpdatedAddImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "externalLinkTarget": {
+      "type": "integer",
+      "default": 0,
+      "title": "External links target window",
+      "description": "Controls how external links will be opened.\n 0 = default.\n 1 = replaces current window.\n 2 = new window/tab.\n 3 = parent.\n 4 = in top window.",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "highlightEditorColors": {
+      "type": "string",
+      "default": "yellow=#FFFF98,green=#53FFBC,blue=#80EBFF,pink=#FFCBE6,red=#FF4F5F,yellow_HCM=#FFFFCC,green_HCM=#53FFBC,blue_HCM=#80EBFF,pink_HCM=#F6B8FF,red_HCM=#C50043"
+    },
+    "historyUpdateUrl": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreDestinationZoom": {
+      "type": "boolean",
+      "default": false,
+      "title": "Ignore the zoom argument in destinations",
+      "description": "When enabled it will maintain the currently active zoom level, rather than letting the PDF document modify it, when navigating to internal destinations."
+    },
+    "imagesRightClickMinSize": {
+      "type": "integer",
+      "default": -1
+    },
+    "forcePageColors": {
+      "type": "boolean",
+      "default": false,
+      "description": "When enabled, the pdf rendering will use the high contrast mode colors"
+    },
+    "pageColorsBackground": {
+      "type": "string",
+      "default": "Canvas",
+      "description": "The color is a string as defined in CSS. Its goal is to help improve readability in high contrast mode"
+    },
+    "pageColorsForeground": {
+      "type": "string",
+      "default": "CanvasText",
+      "description": "The color is a string as defined in CSS. Its goal is to help improve readability in high contrast mode"
+    },
+    "pdfBugEnabled": {
+      "type": "boolean",
+      "default": false,
+      "title": "Enable debugging tools",
+      "description": "Whether to enable debugging tools."
+    },
+    "postMessageAfterPrintCallback": {
+      "type": "boolean",
+      "default": false
+    },
+    "sidebarViewOnLoad": {
+      "type": "integer",
+      "default": -1,
+      "title": "Sidebar state on load",
+      "description": "Controls the state of the sidebar upon load.\n -1 = Default (uses PageMode if available, otherwise the last position if available/enabled).\n 0 = Do not show sidebar.\n 1 = Show thumbnails in sidebar.\n 2 = Show document outline in sidebar.\n 3 = Show attachments in sidebar.",
+      "enum": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "scrollModeOnLoad": {
+      "type": "integer",
+      "default": -1,
+      "title": "Scroll mode on load",
+      "description": "Controls how the viewer scrolls upon load.\n -1 = Default (uses the last position if available/enabled).\n 0 = Vertical scrolling.\n 1 = Horizontal scrolling.\n 2 = Wrapped scrolling.\n 3 = Page scrolling.",
+      "enum": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "spreadModeOnLoad": {
+      "type": "integer",
+      "default": -1,
+      "title": "Spread mode on load",
+      "description": "Whether the viewer should join pages into spreads upon load.\n -1 = Default (uses the last position if available/enabled).\n 0 = No spreads.\n 1 = Odd spreads.\n 2 = Even spreads.",
+      "enum": [
+        -1,
+        0,
+        1,
+        2
+      ]
+    },
+    "textLayerMode": {
+      "type": "integer",
+      "default": 1,
+      "title": "Text layer mode",
+      "description": "Controls if the text layer is enabled, and the selection mode that is used.\n 0 = Disabled.\n 1 = Enabled.",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "viewerCssTheme": {
+      "type": "integer",
+      "default": 2,
+      "title": "Theme",
+      "description": "The theme to use.\n0 = Use system theme.\n1 = Light theme.\n2 = Dark theme.",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "viewOnLoad": {
+      "type": "integer",
+      "default": 0,
+      "title": "View position on load",
+      "description": "The position in the document upon load.\n -1 = Default (uses OpenAction if available, otherwise equal to `viewOnLoad = 0`).\n 0 = The last viewed page/position.\n 1 = The initial page/position.",
+      "enum": [
+        -1,
+        0,
+        1
+      ]
+    },
+    "disableAutoFetch": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableFontFace": {
+      "type": "boolean",
+      "default": false,
+      "title": "Disable @font-face",
+      "description": "Whether to disable @font-face and fall back to canvas rendering (this is more resource-intensive)."
+    },
+    "disableRange": {
+      "type": "boolean",
+      "default": false,
+      "title": "Disable range requests",
+      "description": "Whether to disable range requests (not recommended)."
+    },
+    "disableStream": {
+      "type": "boolean",
+      "default": false,
+      "title": "Disable streaming for requests",
+      "description": "Whether to disable streaming for requests (not recommended)."
+    },
+    "enableHWA": {
+      "type": "boolean",
+      "default": true,
+      "title": "Enable hardware acceleration",
+      "description": "Whether to enable hardware acceleration."
+    },
+    "enableWebGPU": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableXfa": {
+      "type": "boolean",
+      "default": true
+    },
+    "disablePageMode": {
+      "description": "DEPRECATED.",
+      "type": "boolean",
+      "default": false
+    },
+    "disableTextLayer": {
+      "description": "DEPRECATED. Set textLayerMode to 0 to disable the text selection layer by default.",
+      "type": "boolean",
+      "default": false
+    },
+    "enableHandToolOnLoad": {
+      "description": "DEPRECATED. Set cursorToolOnLoad to 1 to enable the hand tool by default.",
+      "type": "boolean",
+      "default": false
+    },
+    "showPreviousViewOnLoad": {
+      "description": "DEPRECATED. Set viewOnLoad to 1 to disable showing the last page/position on load.",
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

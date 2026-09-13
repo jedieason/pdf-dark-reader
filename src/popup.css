@@ -1,0 +1,198 @@
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --surface: #f7f5f6;
+  --surface-hover: #f0eaed;
+  --text: #221a20;
+  --muted: #746a70;
+  --border: #e9e1e5;
+  --accent: #812c4b;
+  --accent-subtle: #f7eaf0;
+  --switch-off: #d5cbd0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 320px;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Roboto, sans-serif;
+  font-size: 13px;
+}
+
+body.pending { visibility: hidden; }
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #111014;
+  --surface: #211a20;
+  --surface-hover: #2c222a;
+  --text: #f5eff2;
+  --muted: #bbadb5;
+  --border: #392d35;
+  --accent: #df89a9;
+  --accent-subtle: #392330;
+  --switch-off: #655760;
+}
+
+.app { padding: 20px; }
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 23px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.brand-mark svg { width: 28px; height: 28px; }
+
+h1, h2, p { margin: 0; }
+h1 { font-size: 16px; font-weight: 700; letter-spacing: -0.25px; }
+.subtitle { margin-top: 3px; color: var(--muted); font-size: 11px; }
+h2 { font-size: 13px; font-weight: 700; }
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.modes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.mode-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 72px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.mode-option:hover { background: var(--surface-hover); }
+.mode-option:has(input:checked) {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.mode-option:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.mode-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.mode-icon { font-size: 25px; line-height: 1; font-weight: 400; }
+.system-icon { font-size: 24px; }
+.hint { color: var(--muted); font-size: 11px; margin-top: 10px; min-height: 14px; }
+
+.option-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 19px 0;
+  margin-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.option-section p {
+  max-width: 205px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+.option-section:has(input:disabled) { opacity: 0.58; }
+.switch:has(input:disabled) { cursor: default; }
+
+.switch { position: relative; display: inline-flex; cursor: pointer; }
+.switch input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.switch-track {
+  display: block;
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--switch-off);
+  transition: background 120ms ease;
+}
+.switch-track::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 3px;
+  box-shadow: 0 1px 2px #0003;
+  transition: transform 120ms ease;
+}
+.switch input:checked + .switch-track { background: var(--accent); }
+.switch input:checked + .switch-track::after { transform: translateX(16px); }
+.switch input:focus-visible + .switch-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 10px;
+}
+.footer-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

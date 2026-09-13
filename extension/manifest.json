@@ -1,0 +1,83 @@
+{
+  "minimum_chrome_version": "128",
+  "manifest_version": 3,
+  "name": "PDF Dark Reader",
+  "version": "1.0.0",
+  "description": "Read PDFs with comfortable dark pages while preserving embedded photos and figures.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "declarativeNetRequestWithHostAccess",
+    "webRequest",
+    "tabs",
+    "webNavigation",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "css": [
+        "contentstyle.css"
+      ],
+      "js": [
+        "contentscript.js"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "storage": {
+    "managed_schema": "preferences_schema.json"
+  },
+  "options_ui": {
+    "page": "options/options.html"
+  },
+  "options_page": "options/options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "incognito": "split",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/web/viewer.html",
+        "http:/*",
+        "https:/*",
+        "file:/*",
+        "chrome-extension:/*",
+        "blob:*",
+        "data:*",
+        "filesystem:/*",
+        "drive:*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "extension_ids": [
+        "*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "PDF Dark Reader",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}

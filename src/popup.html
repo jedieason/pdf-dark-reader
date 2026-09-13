@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Dark Reader</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script src="popup.mjs" type="module"></script>
+  </head>
+  <body class="pending">
+    <main class="app">
+      <header class="header">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M9 4.5h10l5 5V26a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M19 4.5v5h5" stroke="currentColor" stroke-width="1.8" />
+            <path d="M19.5 15.3a6 6 0 1 0 0 9.4 5.2 5.2 0 1 1 0-9.4Z" fill="currentColor" />
+          </svg>
+        </span>
+        <div>
+          <h1>PDF Dark Reader</h1>
+          <p class="subtitle">A calmer way to read PDFs</p>
+        </div>
+      </header>
+
+      <section class="theme-section" aria-labelledby="appearance-heading">
+        <div class="section-heading">
+          <h2 id="appearance-heading">Appearance</h2>
+          <span class="status" id="status">Automatic</span>
+        </div>
+        <fieldset class="modes">
+          <legend class="sr-only">PDF appearance</legend>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="light" />
+            <span class="mode-icon" aria-hidden="true">☀</span>
+            <span>Light</span>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="dark" />
+            <span class="mode-icon" aria-hidden="true">☾</span>
+            <span>Dark</span>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="system" />
+            <span class="mode-icon system-icon" aria-hidden="true">◐</span>
+            <span>System</span>
+          </label>
+        </fieldset>
+        <p class="hint" id="mode-description">Follows your device appearance.</p>
+      </section>
+
+      <section class="option-section" aria-labelledby="scan-heading">
+        <div>
+          <h2 id="scan-heading">Full-page mode</h2>
+          <p>For scanned PDFs. This also changes photos and figures.</p>
+        </div>
+        <label class="switch" aria-label="Full-page mode">
+          <input id="full-page" type="checkbox" />
+          <span class="switch-track"></span>
+        </label>
+      </section>
+
+      <footer>
+        <span class="footer-dot" aria-hidden="true"></span>
+        Works on PDFs opened in Chrome
+      </footer>
+    </main>
+  </body>
+</html>

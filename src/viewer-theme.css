@@ -1,0 +1,46 @@
+html.pdf-dark-pending body {
+  visibility: hidden;
+}
+
+html[data-pdf-dark="light"] {
+  color-scheme: light;
+  --main-color: #221a20;
+  --body-bg-color: #eeecee;
+  --toolbar-bg-color: #ffffff;
+  --sidebar-toolbar-bg-color: #f8f5f7;
+  --sidebar-narrow-bg-color: #f3eff1;
+  --toolbar-border-color: #e5dce1;
+  --toolbar-icon-bg-color: #221a20;
+  --toolbar-icon-hover-bg-color: #221a20;
+  --field-color: #221a20;
+  --field-bg-color: #ffffff;
+  --field-border-color: #d7ccd2;
+  --progressBar-color: #812c4b;
+  --focus-ring-color: #812c4b;
+}
+
+html[data-pdf-dark="light"] body {
+  color-scheme: light;
+}
+
+html[data-pdf-dark="dark"] {
+  color-scheme: dark;
+  --body-bg-color: #101014;
+  --toolbar-bg-color: #1a171b;
+  --sidebar-toolbar-bg-color: #211a20;
+  --sidebar-narrow-bg-color: #181519;
+  --toolbar-border-color: #3a2d34;
+  --progressBar-color: #c66084;
+  --focus-ring-color: #d47698;
+  --page-bg-color: #181a1b;
+  --field-bg-color: #292128;
+  --field-border-color: #594451;
+}
+
+html[data-pdf-dark="dark"] .pdfViewer .page {
+  --page-bg-color: #181a1b;
+}
+
+html[data-pdf-dark="dark"][data-pdf-full-page="true"] .pdfViewer .page canvas {
+  filter: invert(0.88) hue-rotate(180deg);
+}

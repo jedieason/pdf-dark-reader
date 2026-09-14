@@ -153,11 +153,13 @@ manifest.name = "PDF Dark Reader";
 manifest.version = "1.0.0";
 manifest.description = "Read PDFs with comfortable dark pages while preserving embedded photos and figures.";
 manifest.minimum_chrome_version = "128";
+manifest.icons = Object.fromEntries([16, 32, 48, 128].map(size => [size, `icon${size}.png`]));
 manifest.action = {
   default_title: "PDF Dark Reader",
   default_popup: "popup.html",
   default_icon: {
     "16": "icon16.png",
+    "32": "icon32.png",
     "48": "icon48.png",
     "128": "icon128.png",
   },
@@ -174,7 +176,7 @@ patchFile(backgroundPath, [
 ]);
 rmSync(join(output, "telemetry.js"), { force: true });
 
-for (const size of [16, 48, 128]) {
+for (const size of [16, 32, 48, 128]) {
   cpSync(join(root, `assets/icon${size}.png`), join(output, `icon${size}.png`));
 }
 

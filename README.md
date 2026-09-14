@@ -1,5 +1,7 @@
 # PDF Dark Reader
 
+![PDF Dark Reader — Bright ideas. Dark pages.](docs/brand-hero.png)
+
 **A calmer PDF reader for Chrome.** Turn bright pages dark while keeping embedded photos and figures in their original colors.
 
 [![CI](https://github.com/jedieason/pdf-dark-reader/actions/workflows/ci.yml/badge.svg)](https://github.com/jedieason/pdf-dark-reader/actions/workflows/ci.yml) · [Download](https://github.com/jedieason/pdf-dark-reader/releases/latest) · [Contribute](CONTRIBUTING.md) · Apache-2.0
@@ -97,3 +99,22 @@ Useful next steps include pattern and gradient support, automatic scan detection
 The extension needs access to PDF URLs across sites so it can route PDFs into the viewer. Your appearance preference is stored through Chrome's sync storage. The project does not include an analytics endpoint or send document contents to a project server. Read the [privacy notes](PRIVACY.md) and [security policy](SECURITY.md) for details.
 
 This repository's original code and assets are licensed under [Apache 2.0](LICENSE). The bundled PDF.js code and assets retain their upstream notices and license; see [NOTICE.md](NOTICE.md) and [`extension/LICENSE`](extension/LICENSE).
+
+## Brand and Chrome Web Store assets
+
+The yellow glasses mascot is the shared logo for the extension and store artwork.
+The supplied original is preserved in `assets/brand-source.png`; `assets/logo.png`
+is its transparent production version. See [brand notes](assets/BRAND.md).
+
+Store icons, four screenshots, promotional images, listing copy, and the upload ZIP
+are in [`chrome-store-submission/`](chrome-store-submission/). Regenerate with:
+
+```sh
+node scripts/generate-icons.mjs
+node scripts/prepare-store.mjs
+python3 scripts/package-store.py
+```
+
+The render scripts use Playwright and Chrome; set `PLAYWRIGHT_PATH` and
+`CHROME_PATH` for your installation. Icon generation preserves the same artwork
+at 16, 32, 48, and 128 pixels.

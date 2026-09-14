@@ -6,8 +6,8 @@
   --text: #221a20;
   --muted: #746a70;
   --border: #e9e1e5;
-  --accent: #812c4b;
-  --accent-subtle: #f7eaf0;
+  --accent: #805600;
+  --accent-subtle: #fff4d1;
   --switch-off: #d5cbd0;
 }
 
@@ -35,8 +35,8 @@ body[data-theme="dark"] {
   --text: #f5eff2;
   --muted: #bbadb5;
   --border: #392d35;
-  --accent: #df89a9;
-  --accent-subtle: #392330;
+  --accent: #ffd044;
+  --accent-subtle: #382e15;
   --switch-off: #655760;
 }
 
@@ -60,7 +60,7 @@ body[data-theme="dark"] {
   background: var(--accent-subtle);
 }
 
-.brand-mark svg { width: 28px; height: 28px; }
+.brand-mark img { width: 42px; height: 42px; object-fit: contain; }
 
 h1, h2, p { margin: 0; }
 h1 { font-size: 16px; font-weight: 700; letter-spacing: -0.25px; }
